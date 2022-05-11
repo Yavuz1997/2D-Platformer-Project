@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 public class Victory : MonoBehaviour
 {
     [SerializeField] private AudioSource victorySF;
+    private bool levelComp = false;
     
     private void OnTriggerEnter2D(Collider2D coll) {
-        if (coll.gameObject.name == "Player"){
+        if (coll.gameObject.name == "Player" && levelComp != true){
+            levelComp = true;
             victorySF.Play();
             Invoke("completeLevel",1f);
         }
