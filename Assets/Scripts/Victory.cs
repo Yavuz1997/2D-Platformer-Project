@@ -9,7 +9,7 @@ public class Victory : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D coll) {
         if (coll.gameObject.name == "Player"){
             victorySF.Play();
-            completeLevel();
+            Invoke("completeLevel",1f);
         }
     }
     private void completeLevel(){
