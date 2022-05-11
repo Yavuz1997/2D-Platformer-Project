@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Victory : MonoBehaviour
 {
     [SerializeField] private AudioSource victorySF;
@@ -13,6 +13,6 @@ public class Victory : MonoBehaviour
         }
     }
     private void completeLevel(){
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }
