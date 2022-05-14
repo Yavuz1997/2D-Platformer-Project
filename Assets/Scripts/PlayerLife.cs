@@ -19,6 +19,16 @@ public class PlayerLife : MonoBehaviour
             death();
         }
     }
+    private void OnTriggerEnter2D(Collider2D coll) {
+        if (coll.gameObject.CompareTag("Trap")){
+            death();
+        }
+    }
+    private void OnTriggerStay2D(Collider2D coll) {
+        if (coll.gameObject.CompareTag("Trap")){
+            death();
+        }
+    }
 
     private void death(){
         rb.bodyType = RigidbodyType2D.Static;
